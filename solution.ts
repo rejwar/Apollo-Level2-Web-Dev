@@ -72,3 +72,24 @@ export function filterByRating(
 
   return result;
 }
+
+
+// Problem 5:
+
+export function filterActiveUsers(
+  users: { id: number; name: string; email: string; isActive: boolean }[]
+): { id: number; name: string; email: string; isActive: boolean }[] {
+  
+  const result: { id: number; name: string; email: string; isActive: boolean }[] = [];
+
+  for (let i = 0; i < users.length; i++) {
+    const user = users[i];
+
+    if (user.isActive === true) {
+      
+      result[result.length] = user;
+    }
+  }
+
+  return result;
+}
