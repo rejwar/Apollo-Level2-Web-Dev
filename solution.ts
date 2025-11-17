@@ -20,3 +20,35 @@ export function formatValue(value: string | number | boolean): string | number |
     throw new Error("Unsupported type");
 }
 
+
+// Problem 2:
+
+export function getLength(value: string | any[]): number {
+    if (typeof value === "string") {
+    return value.length;
+    }
+
+    if (Array.isArray(value)) {
+    return value.length;
+    }
+
+
+    throw new Error("Unsupported type");
+}
+
+
+// Problem 3:
+
+export class Person {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  getDetails(): string {
+    return `Name: ${this.name}, Age: ${this.age}`;
+  }
+}
