@@ -93,3 +93,108 @@ export function filterActiveUsers(
 
   return result;
 }
+
+
+
+// Problem 6:
+
+export interface Book {
+  title: string;
+  author: string;
+  publishedYear: number;
+  isAvailable: boolean;
+}
+
+export function printBookDetails(book: Book): void {
+  let availability = book.isAvailable ? "Yes" : "No";
+
+  const output =
+    "Title: " +
+    book.title +
+    ", Author: " +
+    book.author +
+    ", Published: " +
+    book.publishedYear +
+    ", Available: " +
+    availability;
+
+  console.log(output);
+}
+
+
+
+// Problem 7:
+
+export function getUniqueValues(
+  array1: (number | string)[],
+  array2: (number | string)[]
+): (number | string)[] {
+  let result: (number | string)[] = [];
+  let rIndex = 0;
+
+  // Helper function: check if value exists in array (manual search)
+  function exists(arr: (number | string)[], length: number, value: number | string): boolean {
+    for (let i = 0; i < length; i++) {
+      if (arr[i] === value) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  // Process first array
+  for (let i = 0; i < array1.length; i++) {
+    if (!exists(result, rIndex, array1[i])) {
+      result[rIndex] = array1[i];
+      rIndex++;
+    }
+  }
+
+  // Process second array
+  for (let i = 0; i < array2.length; i++) {
+    if (!exists(result, rIndex, array2[i])) {
+      result[rIndex] = array2[i];
+      rIndex++;
+    }
+  }
+
+  return result;
+}
+
+
+
+
+// Problem 8:
+
+export function calculateTotalPrice(
+  products: {
+    name: string;
+    price: number;
+    quantity: number;
+    discount?: number;
+  }[]
+): number {
+  let total = 0;
+
+
+  if (products.length === 0) {
+    return 0;
+  }
+
+  for (let i = 0; i < products.length; i++) {
+    const product = products[i];
+
+    
+    const baseTotal = product.price * product.quantity;
+
+  
+    let finalTotalForProduct = baseTotal;
+    if (product.discount !== undefined && product.discount !== null) {
+      finalTotalForProduct = baseTotal - (baseTotal * product.discount) / 100;
+    }
+
+    total = total + finalTotalForProduct;
+  }
+
+  return total;
+}
