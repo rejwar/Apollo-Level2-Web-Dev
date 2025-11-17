@@ -52,3 +52,23 @@ export class Person {
     return `Name: ${this.name}, Age: ${this.age}`;
   }
 }
+
+
+// Problem 4:
+
+export function filterByRating(
+  items: { title: string; rating: number }[]
+): { title: string; rating: number }[] {
+
+  const result: { title: string; rating: number }[] = [];
+
+  for (let i = 0; i < items.length; i++) {
+    const current = items[i];
+
+    if (current.rating >= 4) {
+      result[result.length] = current; 
+    }
+  }
+
+  return result;
+}
