@@ -1,5 +1,5 @@
 
-// Problem 1:
+
 
 export function formatValue(value: string | number | boolean): string | number | boolean {
     if (typeof value === "string") {
@@ -21,7 +21,7 @@ export function formatValue(value: string | number | boolean): string | number |
 }
 
 
-// Problem 2:
+
 
 export function getLength(value: string | any[]): number {
     if (typeof value === "string") {
@@ -37,7 +37,7 @@ export function getLength(value: string | any[]): number {
 }
 
 
-// Problem 3:
+
 
 export class Person {
   name: string;
@@ -54,7 +54,7 @@ export class Person {
 }
 
 
-// Problem 4:
+
 
 export function filterByRating(
   items: { title: string; rating: number }[]
@@ -74,7 +74,7 @@ export function filterByRating(
 }
 
 
-// Problem 5:
+
 
 export function filterActiveUsers(
   users: { id: number; name: string; email: string; isActive: boolean }[]
@@ -96,7 +96,7 @@ export function filterActiveUsers(
 
 
 
-// Problem 6:
+
 
 export interface Book {
   title: string;
@@ -123,7 +123,7 @@ export function printBookDetails(book: Book): void {
 
 
 
-// Problem 7:
+
 
 export function getUniqueValues(
   array1: (number | string)[],
@@ -164,7 +164,7 @@ export function getUniqueValues(
 
 
 
-// Problem 8:
+
 
 export function calculateTotalPrice(
   products: {
