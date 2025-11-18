@@ -132,7 +132,7 @@ export function getUniqueValues(
   let result: (number | string)[] = [];
   let rIndex = 0;
 
-  // Helper function: check if value exists in array (manual search)
+  
   function exists(arr: (number | string)[], length: number, value: number | string): boolean {
     for (let i = 0; i < length; i++) {
       if (arr[i] === value) {
@@ -142,7 +142,7 @@ export function getUniqueValues(
     return false;
   }
 
-  // Process first array
+  
   for (let i = 0; i < array1.length; i++) {
     if (!exists(result, rIndex, array1[i])) {
       result[rIndex] = array1[i];
@@ -150,7 +150,7 @@ export function getUniqueValues(
     }
   }
 
-  // Process second array
+  
   for (let i = 0; i < array2.length; i++) {
     if (!exists(result, rIndex, array2[i])) {
       result[rIndex] = array2[i];
